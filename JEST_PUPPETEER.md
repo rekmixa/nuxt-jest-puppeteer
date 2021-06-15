@@ -1,4 +1,4 @@
-# Installation
+# JEST & Puppeteer
 
 https://jestjs.io/ru/docs/puppeteer
 
