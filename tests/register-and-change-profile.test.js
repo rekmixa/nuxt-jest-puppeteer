@@ -1,6 +1,19 @@
 describe('Register & Auth & Change profile test', () => {
   beforeAll(async () => {
     await page.goto(`http://${process.env.DOMAIN}`)
+
+    await page.setViewport({
+      width: 1920,
+      height: 1080,
+    })
+
+    const recorder = new PuppeteerVideoRecorder()
+    await recorder.init(page, 'coverage')
+    await recorder.start()
+  })
+
+  afterAll(async () => {
+    await recorder.stop()
   })
 
   describe('Register test', () => {
