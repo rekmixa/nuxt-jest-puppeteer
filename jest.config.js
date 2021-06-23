@@ -1,6 +1,10 @@
 module.exports = {
   preset: 'jest-puppeteer',
 
+  testMatch: [
+    '**/?(*.)+(spec|test).[jt]s?(x)'
+  ],
+
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
     '^~/(.*)$': '<rootDir>/$1',
