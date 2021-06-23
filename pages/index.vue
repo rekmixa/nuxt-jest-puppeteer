@@ -1,6 +1,13 @@
 <template>
   <div class="form-container">
-    <div class="title">Заполнение профиля</div>
+    <div class="title">
+      <template v-if="user">
+        Заполнение профиля
+      </template>
+      <template v-else>
+        Добро пожаловать на сайт!
+      </template>
+    </div>
     <div class="form" v-if="user">
       <div class="error" v-if="errorMessage">{{ errorMessage }}</div>
       <div class="item">
