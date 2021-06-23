@@ -12,6 +12,7 @@ if (process.env.NO_SANDBOX === 'true') {
 module.exports = {
   launch: {
     dumpio: true,
+    slowMo: Number(process.env.SLOWMO || 0),
     headless: process.env.HEADLESS === 'true',
     executablePath: process.env.CHROME_PATH,
     args,
