@@ -4,7 +4,7 @@ env:
 	@docker-compose run --rm node /bin/sh
 
 env-puppeteer:
-	@docker-compose run --rm puppeteer /bin/sh
+	@docker-compose run --rm puppeteer bash
 
 test:
 	@docker-compose run --rm puppeteer yarn test
