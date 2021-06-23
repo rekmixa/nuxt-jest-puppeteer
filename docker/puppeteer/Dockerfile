@@ -9,15 +9,12 @@ RUN apt-get update \
       --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
-RUN groupadd -r pptruser && useradd -r -g pptruser -G audio,video pptruser \
+RUN yarn add puppeteer \
+    && groupadd -r pptruser && useradd -r -g pptruser -G audio,video pptruser \
     && mkdir -p /home/pptruser/Downloads \
-    && chown -R pptruser:pptruser /home/pptruser
-    # && chown -R pptruser:pptruser /node_modules
-
-RUN mkdir -p /home/node/app/coverage
-RUN chown -R pptruser:pptruser /home/node/app/coverage
-
-RUN yarn add puppeteer
+    && mkdir -p /home/pptruser/coverage \
+    && chown -R pptruser:pptruser /home/pptruser \
+    && chown -R pptruser:pptruser /node_modules
 
 USER pptruser
 
