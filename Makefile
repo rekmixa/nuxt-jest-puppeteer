@@ -3,9 +3,6 @@ all: up logs
 env:
 	@docker-compose run --rm node /bin/sh
 
-env:
-	@docker-compose run --rm chrome /bin/sh
-
 up:
 	@docker-compose up -d --remove-orphans --force-recreate --build
 
