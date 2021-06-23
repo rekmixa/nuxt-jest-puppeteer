@@ -62,7 +62,6 @@ export default {
     ...mapMutations(['saveProfile']),
 
     save() {
-      console.log(this.form)
       if (!this.form.firstName) {
         this.errorMessage = 'Введите имя'
         return
