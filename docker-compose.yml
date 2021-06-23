@@ -4,7 +4,7 @@ services:
   node:
     build:
       context: docker/node
-    user: node
+    # user: node
     working_dir: /home/node/app
     environment:
       HOST: 0.0.0.0
