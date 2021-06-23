@@ -7,7 +7,7 @@
       <div class="menu">
         <template v-if="user">
           <div class="menu-item">
-            <a href="#" @click="logout">
+            <a href="#" id="#logout-link" @click="logout">
               Выйти
               <span class="small-text">({{ user.login }})</span>
             </a>
@@ -15,10 +15,10 @@
         </template>
         <template v-else>
           <div class="menu-item">
-            <nuxt-link to="/auth">Авторизация</nuxt-link>
+            <nuxt-link id="#auth-link" to="/auth">Авторизация</nuxt-link>
           </div>
           <div class="menu-item">
-            <nuxt-link to="/register">Регистрация</nuxt-link>
+            <nuxt-link id="#register-link" to="/register">Регистрация</nuxt-link>
           </div>
         </template>
       </div>
