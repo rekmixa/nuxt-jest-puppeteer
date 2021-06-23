@@ -9,6 +9,9 @@ env-puppeteer:
 test:
 	@docker-compose run --rm puppeteer yarn test
 
+coverage-directory-pptr:
+	@docker-compose run --rm --user=root puppeteer mkdir -p coverage && chown -R pptruser:pptruser coverage
+
 up:
 	@docker-compose up -d --remove-orphans --force-recreate --build
 
