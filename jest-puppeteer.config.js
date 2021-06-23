@@ -1,16 +1,20 @@
 require('dotenv').config()
 
-const noSandboxArgs = [
-  '--no-sandbox',
-  '--disable-setuid-sandbox'
+const args = [
+  '--disable-dev-shm-usage',
 ]
+
+if (process.env.NO_SANDBOX === 'true') {
+  args.push('--no-sandbox')
+  args.push('--disable-setuid-sandbox')
+}
 
 module.exports = {
   launch: {
     dumpio: true,
     headless: process.env.HEADLESS === 'true',
     executablePath: process.env.CHROME_PATH,
-    args: process.env.NO_SANDBOX === 'true' ? noSandboxArgs : [],
+    args,
     product: 'chrome',
   },
   browserContext: 'default',
