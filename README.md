@@ -41,6 +41,6 @@ make generate-zip
 ## Run tests
 
 ```
-make env-chrome
+make env
 yarn test tests/register-and-change-profile.test.js
 ```
