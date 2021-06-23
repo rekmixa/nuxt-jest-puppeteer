@@ -1,4 +1,4 @@
-# nuxt-js-kit
+# nuxt-jest-puppeteer
 
 > Nuxt JS Kit
 
@@ -37,3 +37,10 @@ make generate-zip
 ```
 
 ##### For creating zip archieves you need to install *zip* dependency
+
+## Run tests
+
+```
+make env
+yarn test tests/register-and-change-profile.test.js
+```
