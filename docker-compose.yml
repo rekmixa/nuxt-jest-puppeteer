@@ -22,7 +22,7 @@ services:
     command: sh -c 'yarn && yarn dev'
     restart: ${RESTART}
   
-  puppeteer:
+  chrome:
     build:
       context: docker/puppeteer
     working_dir: /home/node/app

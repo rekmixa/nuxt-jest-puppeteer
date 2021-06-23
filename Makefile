@@ -3,14 +3,14 @@ all: up logs
 env:
 	@docker-compose run --rm node /bin/sh
 
-env-puppeteer:
-	@docker-compose run --rm puppeteer bash
+env-chrome:
+	@docker-compose run --rm chrome bash
 
 test:
-	@docker-compose run --rm puppeteer yarn test
+	@docker-compose run --rm chrome yarn test
 
 coverage-directory-pptr:
-	@docker-compose run --rm --user=root puppeteer sh -c 'mkdir -p coverage && chown -R pptruser:pptruser coverage'
+	@docker-compose run --rm --user=root chrome sh -c 'mkdir -p coverage && chown -R pptruser:pptruser coverage'
 
 up:
 	@docker-compose up -d --remove-orphans --force-recreate --build
