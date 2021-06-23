@@ -21,6 +21,13 @@ services:
       - web
     command: sh -c 'yarn && yarn dev'
     restart: ${RESTART}
+  
+  puppeteer:
+    build:
+      context: docker/puppeteer
+    working_dir: /home/node/app
+    volumes:
+      - ./:/home/node/app
 
 networks:
   web:
