@@ -24,7 +24,7 @@ services:
   
   chrome:
     build:
-      context: docker/puppeteer
+      context: docker/chrome
     working_dir: /home/node/app
     volumes:
       - ./:/home/node/app
