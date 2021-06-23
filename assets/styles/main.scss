@@ -1,0 +1,154 @@
+$blue: #409cd2;
+$blue-dark: #2776a5;
+$white: #fff;
+$black: #182933;
+$blue-link: #2ea1e4;
+$blue-link-hover: #1984c2;
+$green: #16a972;
+$red: #e24f22;
+
+body {
+  background-color: $blue;
+  color: $white;
+  font-size: 20px;
+}
+
+a {
+  color: $white;
+}
+
+.layout-container {
+  margin: auto;
+  max-width: 1200px;
+}
+
+.main-container {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 300px auto;
+  grid-template-areas: 'menu content';
+  min-height: 300px;
+
+  > .menu {
+    grid-area: menu;
+
+    > .menu-item {
+      display: block;
+      background-color: $blue-link;
+      margin-bottom: 10px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      text-align: center;
+      border-radius: 5px;
+      border: 1px solid $white;
+      cursor: pointer;
+
+      > a {
+        display: block;
+      }
+
+      &:hover {
+        background-color: $blue-link-hover;
+      }
+
+      &:last-child {
+        margin-bottom: unset;
+      }
+    }
+  }
+
+  > .content {
+    grid-area: content;
+    padding-left: 10px;
+  }
+}
+
+.header {
+  background-color: $white;
+  color: $blue-dark;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 35px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  cursor: pointer;
+
+  > a {
+    color: $blue-dark;
+    display: block;
+    text-decoration: none;
+  }
+}
+
+.footer {
+  background-color: $black;
+  color: $white;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.form-container {
+  > .title {
+    display: block;
+    background-color: $white;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid $blue-dark;
+    color: $blue-dark;
+  }
+
+  > .form {
+    display: block;
+    margin: auto;
+    text-align: center;
+
+    > .error {
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      margin-bottom: 10px;
+      background-color: $red;
+      border-radius: 5px;
+      color: $white;
+      width: 300px;
+      padding: 10px;
+    }
+
+    > .item {
+      display: block;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.small-text {
+  font-size: 15px;
+}
+
+input {
+  background-color: $white;
+  border: 1px solid $black;
+  border-radius: 5px;
+  color: $black;
+  padding: 10px;
+  min-width: 255px;
+}
+
+button {
+  background-color: $green;
+  color: $white;
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  cursor: pointer;
+}
