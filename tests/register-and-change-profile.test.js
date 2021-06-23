@@ -19,11 +19,15 @@ describe('Register & Auth & Change profile test', () => {
       height: 1080,
     })
 
-    await recorder.start('coverage/test.mp4')
+    if (process.env.PUPPETEER_RECORD_VIDEO === 'true') {
+      await recorder.start(process.env.PUPPETEER_RECORD_FILE_NAME)
+    }
   })
 
-  afterAll(async () => {
-    await recorder.stop()
+  afterAll(async () => {    
+    if (process.env.PUPPETEER_RECORD_VIDEO === 'true') {
+      await recorder.stop()
+    }
   })
 
   describe('Register test', () => {
