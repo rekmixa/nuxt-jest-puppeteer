@@ -3,6 +3,9 @@ all: up logs
 env:
 	@docker-compose run --rm node /bin/sh
 
+test:
+	@docker-compose run --rm puppeteer yarn test
+
 up:
 	@docker-compose up -d --remove-orphans --force-recreate --build
 

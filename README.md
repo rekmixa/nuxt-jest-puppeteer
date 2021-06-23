@@ -41,8 +41,7 @@ make generate-zip
 ## Run tests
 
 ```
-make env
-yarn test
+make test
 ```
 
 ### [Troubleshooting](https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md#chrome-is-downloaded-but-fails-to-launch-on-nodejs-14)
