@@ -10,7 +10,7 @@ test:
 	@docker-compose run --rm puppeteer yarn test
 
 coverage-directory-pptr:
-	@docker-compose run --rm --user=root puppeteer mkdir -p coverage && chown -R pptruser:pptruser coverage
+	@docker-compose run --rm --user=root puppeteer sh -c 'mkdir -p coverage && chown -R pptruser:pptruser coverage'
 
 up:
 	@docker-compose up -d --remove-orphans --force-recreate --build
@@ -33,7 +33,7 @@ logs:
 cp-env:
 	@test -f .env || cp .env-dist .env
 
-install: cp-env up
+install: cp-env up coverage-directory-pptr
 
 yarn-generate:
 	@docker-compose run --rm node yarn generate
