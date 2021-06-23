@@ -42,5 +42,7 @@ make generate-zip
 
 ```
 make env
-yarn test tests/register-and-change-profile.test.js
+yarn test
 ```
+
+### [Troubleshooting](https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md#chrome-is-downloaded-but-fails-to-launch-on-nodejs-14)
