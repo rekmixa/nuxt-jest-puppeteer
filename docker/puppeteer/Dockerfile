@@ -36,7 +36,7 @@ RUN yarn add puppeteer \
     && chown -R pptruser:pptruser /node_modules
 
 
-RUN chown -R pptruser:pptruser /app
+RUN chown -R pptruser:pptruser /app/coverage
 
 # Run everything after as non-privileged user.
 USER pptruser
