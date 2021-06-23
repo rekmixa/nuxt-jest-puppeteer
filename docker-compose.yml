@@ -4,7 +4,7 @@ services:
   node:
     build:
       context: docker/node
-    # user: node
+    user: node
     working_dir: /home/node/app
     environment:
       HOST: 0.0.0.0
@@ -20,6 +20,26 @@ services:
     networks:
       - web
     command: sh -c 'yarn && yarn dev'
+    restart: ${RESTART}
+
+  chrome:
+    build:
+      context: docker/chrome
+    working_dir: /home/node/app
+    environment:
+      HOST: 0.0.0.0
+      PORT: 3030
+    expose:
+      - 3030
+    volumes:
+      - ./:/home/node/app
+      - ./docker/node/bootstrap.sh:/usr/local/bin/bootstrap.sh
+    labels:
+      traefik.enable: 'true'
+      traefik.frontend.rule: 'Host: ${DOMAIN}'
+    networks:
+      - web
+    command: sh -c 'yarn'
     restart: ${RESTART}
 
 networks:
