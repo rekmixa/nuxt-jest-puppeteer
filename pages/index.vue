@@ -13,6 +13,7 @@
       <div class="item">
         <input
           type="text"
+          name="lastName"
           v-model="form.lastName"
           placeholder="Фамилия"
         />
@@ -20,6 +21,7 @@
       <div class="item">
         <input
           type="text"
+          name="firstName"
           v-model="form.firstName"
           placeholder="Имя"
         />
@@ -27,12 +29,13 @@
       <div class="item">
         <input
           type="text"
+          name="middleName"
           v-model="form.middleName"
           placeholder="Отчество"
         />
       </div>
       <div class="item">
-        <button @click="save">Сохранить</button>
+        <button id="#save" @click="save">Сохранить</button>
       </div>
     </div>
   </div>

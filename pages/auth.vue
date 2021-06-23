@@ -6,6 +6,7 @@
       <div class="item">
         <input
           type="text"
+          name="login"
           v-model="form.login"
           placeholder="Логин"
         />
@@ -13,12 +14,13 @@
       <div class="item">
         <input
           type="password"
+          name="password"
           v-model="form.password"
           placeholder="Пароль"
         />
       </div>
       <div class="item">
-        <button @click="login">Войти</button>
+        <button id="#auth" @click="login">Войти</button>
       </div>
     </div>
   </div>

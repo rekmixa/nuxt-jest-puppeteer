@@ -6,6 +6,7 @@
       <div class="item">
         <input
           type="text"
+          name="login"
           v-model="form.login"
           placeholder="Логин"
         />
@@ -13,6 +14,7 @@
       <div class="item">
         <input
           type="password"
+          name="password"
           v-model="form.password"
           placeholder="Пароль"
         />
@@ -20,12 +22,13 @@
       <div class="item">
         <input
           type="password"
+          name="passwordRepeat"
           v-model="form.passwordRepeat"
           placeholder="Подтверждение пароля"
         />
       </div>
       <div class="item">
-        <button @click="register">Зарегистрироваться</button>
+        <button id="#register" @click="register">Зарегистрироваться</button>
       </div>
     </div>
   </div>
