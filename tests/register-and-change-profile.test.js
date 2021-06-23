@@ -1,4 +1,16 @@
+import { PuppeteerScreenRecorder } from 'puppeteer-screen-recorder'
+
 describe('Register & Auth & Change profile test', () => {
+  const recorder = new PuppeteerScreenRecorder(page, {
+    followNewTab: true,
+    fps: 25,
+    videoFrame: {
+      width: 1024,
+      height: 768,
+    },
+    aspectRatio: '4:3',
+  })
+
   beforeAll(async () => {
     await page.goto(`http://${process.env.DOMAIN}`)
 
@@ -7,9 +19,7 @@ describe('Register & Auth & Change profile test', () => {
       height: 1080,
     })
 
-    const recorder = new PuppeteerVideoRecorder()
-    await recorder.init(page, 'coverage')
-    await recorder.start()
+    await recorder.start('coverage/test.mp4')
   })
 
   afterAll(async () => {
