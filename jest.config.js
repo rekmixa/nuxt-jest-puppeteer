@@ -23,7 +23,6 @@ module.exports = {
   },
 
   collectCoverage: true,
-  coverageReporters: ['json', ['lcov', {'projectRoot': process.env.COVERAGE_DIRECTORY}]],
   collectCoverageFrom: [
     '<rootDir>/components/**/*.vue',
     '<rootDir>/pages/**/*.vue'
