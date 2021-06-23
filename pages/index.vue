@@ -75,16 +75,17 @@ export default {
     ...mapMutations(['saveProfile']),
 
     save() {
-      if (!this.form.firstName) {
-        this.errorMessage = 'Введите имя'
-        return
-      }
-
       if (!this.form.lastName) {
         this.errorMessage = 'Введите фамилию'
         return
       }
 
+      if (!this.form.firstName) {
+        this.errorMessage = 'Введите имя'
+        return
+      }
+
+      this.errorMessage = ''
       this.saveProfile(this.form)
     }
   }

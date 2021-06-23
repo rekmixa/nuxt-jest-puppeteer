@@ -90,6 +90,7 @@ export default {
         return
       }
 
+      this.errorMessage = ''
       this.registerUser(this.form)
       this.$router.push('/')
     }

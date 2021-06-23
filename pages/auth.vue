@@ -74,6 +74,7 @@ export default {
         return
       }
 
+      this.errorMessage = ''
       this.setUserId(this.userForLogin?.id)
       this.$router.push('/')
     }
