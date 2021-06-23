@@ -3,6 +3,9 @@ all: up logs
 env:
 	@docker-compose run --rm node /bin/sh
 
+env-puppeteer:
+	@docker-compose run --rm puppeteer /bin/sh
+
 test:
 	@docker-compose run --rm puppeteer yarn test
 
