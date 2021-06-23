@@ -30,6 +30,9 @@ import { mapState, mapMutations } from 'vuex'
 export default {
   name: 'auth',
   middleware: ['guest'],
+  head: {
+    title: 'Авторизация',
+  },
 
   data: () => ({
     form: {

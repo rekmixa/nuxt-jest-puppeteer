@@ -43,6 +43,9 @@ import { mapMutations, mapGetters } from 'vuex'
 
 export default {
   name: 'index',
+  head: {
+    title: 'Главная',
+  },
 
   computed: {
     ...mapGetters(['user']),

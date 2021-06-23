@@ -37,6 +37,9 @@ import { mapState, mapMutations } from 'vuex'
 export default {
   name: 'register',
   middleware: ['guest'],
+  head: {
+    title: 'Регистрация',
+  },
 
   data: () => ({
     form: {
