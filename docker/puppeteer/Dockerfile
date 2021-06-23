@@ -1,8 +1,5 @@
 FROM node:12-slim
 
-WORKDIR /app
-ADD . /app
-
 RUN apt-get update \
     && apt-get install -y wget gnupg \
     && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
@@ -17,8 +14,8 @@ RUN groupadd -r pptruser && useradd -r -g pptruser -G audio,video pptruser \
     && chown -R pptruser:pptruser /home/pptruser
     # && chown -R pptruser:pptruser /node_modules
 
-RUN test -d coverage || mkdir coverage
-RUN chown -R pptruser:pptruser coverage
+RUN mkdir -p /home/node/app/coverage
+RUN chown -R pptruser:pptruser /home/node/app/coverage
 
 RUN yarn add puppeteer
 
